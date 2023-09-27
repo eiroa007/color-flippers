@@ -1,0 +1,11 @@
+:root {
+  --primary: rgb(15, 15, 15);
+  --secondary: #a2f2ca;
+  font-famly: "helvetica", sans-serif;
+}
+
+* ¨ {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
