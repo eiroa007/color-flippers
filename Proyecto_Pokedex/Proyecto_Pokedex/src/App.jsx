@@ -16,14 +16,15 @@ defense: "",
 speed: "",
 type: "",
   });
+  
 
   const searchPokemon = () => {
     axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`).then ((res) => {
-      setPokemonName({
+      setPokemon({
         name: pokemonName,
         number: res.data.id,
         species: res.data.species.name,
-        Image: res.data.sprites.fron_default,
+        image: res.data.sprites.front_default,
         hp: res.data.stats[0].base_stat,
         attack: res.data.stats[1].base_stat,
         defense: res.data.stats[2].base_stat,
@@ -41,21 +42,35 @@ type: "",
   return (
     <div className="App">
       <div className="TitleSection">
-        <h1>Pokedex</h1>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png" alt="Logo" />
+        
         <input 
         type="text"
         onChange={(event) => {
           setPokemonName(event.target.value);
-        }} 
+        }}
+        value={pokemonName.toLowerCase()} 
         />
-        <button onClick={searchPokemon}>Search Pokemon</button>
+        <div>
+      {pokemonName && <button onClick={searchPokemon}>Search Pokemon</button>}
+      </div>
         </div>      
     <div className="DisplaySection">
       {!pokemonChosen ? (
         <h1> Please choose a Pokemon </h1>
       ) : (
+        <>
         <h1>{pokemon.name}</h1>
-      )}
+        <img src={pokemon.image} alt={pokemon.name} />
+        <h3>Number: #{pokemon.number}</h3>
+        <h3>Species: {pokemon.type}</h3>
+        <h3>Type: {pokemon.type}</h3>
+        <h4>Hp: {pokemon.hp}</h4>
+        <h4>Attack: {pokemon.attack}</h4>
+        <h4>Defense: {pokemon.defense}</h4>
+        
+        </>
+        )}
     </div>
 
     </div>

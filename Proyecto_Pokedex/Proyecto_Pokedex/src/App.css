@@ -2,11 +2,14 @@ body {
   margin: 0;
   padding: 0;
 }
+
 .App {
   display: flex;
   justify-content: center;
   font-family: Calibri;
   font-size: 24px;
+  align-items: column;
+  flex-direction: column;
 }
 .TitleSection {
   background-color: #6ea4bb;
@@ -38,4 +41,21 @@ body {
 }
 .TitleSection button:hover {
   cursor: pointer;
+}
+.DisplaySection {
+  width: 180px;
+  height: 40px;
+  margin: 0 auto;
+  border-radius: 10px;
+  font-size: 18px;
+  padding-left: 10px;
+  text-align: center;
+}
+.logo {
+  width: 400px;
+  height: auto;
+}
+.TitleSection > img {
+  width: 400px;
+  height: auto;
 }
