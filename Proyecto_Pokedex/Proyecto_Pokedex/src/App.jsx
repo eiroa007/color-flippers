@@ -57,7 +57,7 @@ type: "",
         </div>      
     <div className="DisplaySection">
       {!pokemonChosen ? (
-        <h1> Please choose a Pokemon </h1>
+        <h1> Please choose a Pokémon </h1>
       ) : (
         <>
         <h1>{pokemon.name}</h1>
